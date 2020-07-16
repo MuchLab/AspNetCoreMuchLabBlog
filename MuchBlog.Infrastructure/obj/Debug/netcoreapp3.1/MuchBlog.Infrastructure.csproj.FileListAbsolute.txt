@@ -1,0 +1,10 @@
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.deps.json
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.dll
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.pdb
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\obj\Debug\netcoreapp3.1\MuchBlog.Infrastructure.csprojAssemblyReference.cache
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\obj\Debug\netcoreapp3.1\MuchBlog.Infrastructure.AssemblyInfoInputs.cache
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\obj\Debug\netcoreapp3.1\MuchBlog.Infrastructure.AssemblyInfo.cs
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\obj\Debug\netcoreapp3.1\MuchBlog.Infrastructure.dll
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\obj\Debug\netcoreapp3.1\MuchBlog.Infrastructure.pdb
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.runtimeconfig.json
+D:\AspNetCore\MuchBlog\MuchBlog.Infrastructure\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.runtimeconfig.dev.json

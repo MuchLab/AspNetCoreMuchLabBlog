@@ -1,0 +1,11 @@
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\bin\Debug\netcoreapp3.1\MuchBlog.Domain.deps.json
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\bin\Debug\netcoreapp3.1\MuchBlog.Domain.dll
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\bin\Debug\netcoreapp3.1\MuchBlog.Domain.pdb
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.dll
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\bin\Debug\netcoreapp3.1\MuchBlog.Infrastructure.pdb
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.csprojAssemblyReference.cache
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.AssemblyInfoInputs.cache
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.AssemblyInfo.cs
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.csproj.CopyComplete
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.dll
+D:\AspNetCore\MuchBlog\MuchBlog.Domain\obj\Debug\netcoreapp3.1\MuchBlog.Domain.pdb

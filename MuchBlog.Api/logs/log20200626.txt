@@ -1,0 +1,160 @@
+2020-06-26 13:47:18.018 +08:00 [INF] Starting web host
+2020-06-26 13:47:20.684 +08:00 [INF] Now listening on: https://localhost:5001
+2020-06-26 13:47:20.696 +08:00 [INF] Now listening on: http://localhost:5000
+2020-06-26 13:47:20.698 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-26 13:47:20.699 +08:00 [INF] Hosting environment: Development
+2020-06-26 13:47:20.701 +08:00 [INF] Content root path: D:\AspNetCore\MuchBlog\MuchBlog.Api
+2020-06-26 13:48:07.187 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/essaysummary?pagenumber=1&pagesize=5  
+2020-06-26 13:48:07.223 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:07.316 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api)'
+2020-06-26 13:48:07.431 +08:00 [INF] Route matched with {action = "GetEssaySummary", controller = "EssaySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEssaySummaryAsync(MuchBlog.Domain.Helpers.Parameters.EssayResourceParameters) on controller MuchBlog.Api.Controllers.EssaySummaryController (MuchBlog.Api).
+2020-06-26 13:48:09.026 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:16.364 +08:00 [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+2020-06-26 13:48:16.777 +08:00 [INF] Executed DbCommand (163ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[CreateDate], [t].[LastModified], [t].[Title], [t].[UserId], [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM (
+    SELECT [e].[Id], [e].[Content], [e].[CreateDate], [e].[LastModified], [e].[Title], [e].[UserId]
+    FROM [Essays] AS [e]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+2020-06-26 13:48:17.204 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+2020-06-26 13:48:17.211 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[MuchBlog.Api.Dtos.EssayDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MuchBlog.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-06-26 13:48:17.285 +08:00 [INF] Executed action MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api) in 9830.8475ms
+2020-06-26 13:48:17.289 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api)'
+2020-06-26 13:48:17.301 +08:00 [INF] Request finished in 10121.3967ms 200 application/json; charset=utf-8
+2020-06-26 13:48:34.119 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/users?username=axlrose&password=123456  
+2020-06-26 13:48:34.140 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:34.155 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.UserController.AuthorizeAsync (MuchBlog.Api)'
+2020-06-26 13:48:34.175 +08:00 [INF] Route matched with {action = "Authorize", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AuthorizeAsync(MuchBlog.Domain.Helpers.Parameters.UserAuthorizeParameters) on controller MuchBlog.Api.Controllers.UserController (MuchBlog.Api).
+2020-06-26 13:48:34.278 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:34.385 +08:00 [INF] Executed DbCommand (22ms) [Parameters=[@__username_0='?' (Size = 20), @__password_1='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__username_0) AND ([u].[Password] = @__password_1)
+2020-06-26 13:48:34.418 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType8`2[[MuchBlog.Api.Dtos.UserDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2020-06-26 13:48:34.430 +08:00 [INF] Executed action MuchBlog.Api.Controllers.UserController.AuthorizeAsync (MuchBlog.Api) in 220.5929ms
+2020-06-26 13:48:34.437 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.UserController.AuthorizeAsync (MuchBlog.Api)'
+2020-06-26 13:48:34.440 +08:00 [INF] Request finished in 321.2093ms 200 application/json; charset=utf-8
+2020-06-26 13:48:34.575 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/essaysummary?pagenumber=1&pagesize=5  
+2020-06-26 13:48:34.627 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:34.638 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api)'
+2020-06-26 13:48:34.642 +08:00 [INF] Route matched with {action = "GetEssaySummary", controller = "EssaySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEssaySummaryAsync(MuchBlog.Domain.Helpers.Parameters.EssayResourceParameters) on controller MuchBlog.Api.Controllers.EssaySummaryController (MuchBlog.Api).
+2020-06-26 13:48:34.671 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:34.696 +08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+2020-06-26 13:48:34.743 +08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[CreateDate], [t].[LastModified], [t].[Title], [t].[UserId], [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM (
+    SELECT [e].[Id], [e].[Content], [e].[CreateDate], [e].[LastModified], [e].[Title], [e].[UserId]
+    FROM [Essays] AS [e]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+2020-06-26 13:48:34.803 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+2020-06-26 13:48:34.813 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[MuchBlog.Api.Dtos.EssayDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MuchBlog.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-06-26 13:48:34.853 +08:00 [INF] Executed action MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api) in 197.5945ms
+2020-06-26 13:48:34.862 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.EssaySummaryController.GetEssaySummaryAsync (MuchBlog.Api)'
+2020-06-26 13:48:34.866 +08:00 [INF] Request finished in 290.8099ms 200 application/json; charset=utf-8
+2020-06-26 13:48:36.337 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/users/f9168c5e-ceb2-4faa-b6bf-329bf39fa1e4/essays?pagenumber=1&pagesize=3  
+2020-06-26 13:48:36.388 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:36.412 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:36.427 +08:00 [INF] Route matched with {action = "GetEssays", controller = "Essay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MuchBlog.Api.Dtos.EssayDto]]] GetEssaysAsync(System.Guid, MuchBlog.Domain.Helpers.Parameters.EssayResourceParameters) on controller MuchBlog.Api.Controllers.EssayController (MuchBlog.Api).
+2020-06-26 13:48:36.455 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:36.488 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-06-26 13:48:36.528 +08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:36.552 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[CreateDate], [t].[LastModified], [t].[Title], [t].[UserId], [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM (
+    SELECT [e].[Id], [e].[Content], [e].[CreateDate], [e].[LastModified], [e].[Title], [e].[UserId]
+    FROM [Essays] AS [e]
+    WHERE [e].[UserId] = @__userId_0
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+2020-06-26 13:48:36.580 +08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:36.586 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[MuchBlog.Api.Dtos.EssayDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MuchBlog.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-06-26 13:48:36.643 +08:00 [INF] Executed action MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api) in 198.681ms
+2020-06-26 13:48:36.650 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:36.652 +08:00 [INF] Request finished in 315.5897ms 200 application/json; charset=utf-8
+2020-06-26 13:48:50.726 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/users/f9168c5e-ceb2-4faa-b6bf-329bf39fa1e4/essays?pagenumber=1&pagesize=3  
+2020-06-26 13:48:50.751 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:50.754 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:50.757 +08:00 [INF] Route matched with {action = "GetEssays", controller = "Essay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MuchBlog.Api.Dtos.EssayDto]]] GetEssaysAsync(System.Guid, MuchBlog.Domain.Helpers.Parameters.EssayResourceParameters) on controller MuchBlog.Api.Controllers.EssayController (MuchBlog.Api).
+2020-06-26 13:48:50.765 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:50.778 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-06-26 13:48:50.801 +08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:50.814 +08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[CreateDate], [t].[LastModified], [t].[Title], [t].[UserId], [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM (
+    SELECT [e].[Id], [e].[Content], [e].[CreateDate], [e].[LastModified], [e].[Title], [e].[UserId]
+    FROM [Essays] AS [e]
+    WHERE [e].[UserId] = @__userId_0
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+2020-06-26 13:48:50.868 +08:00 [INF] Executed DbCommand (17ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:50.908 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[MuchBlog.Api.Dtos.EssayDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MuchBlog.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-06-26 13:48:50.965 +08:00 [INF] Executed action MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api) in 204.198ms
+2020-06-26 13:48:50.968 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:50.973 +08:00 [INF] Request finished in 246.4953ms 200 application/json; charset=utf-8
+2020-06-26 13:48:56.221 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/api/users/f9168c5e-ceb2-4faa-b6bf-329bf39fa1e4/essays?pagenumber=1&pagesize=3  
+2020-06-26 13:48:56.233 +08:00 [INF] CORS policy execution successful.
+2020-06-26 13:48:56.238 +08:00 [INF] Executing endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:56.249 +08:00 [INF] Route matched with {action = "GetEssays", controller = "Essay"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MuchBlog.Api.Dtos.EssayDto]]] GetEssaysAsync(System.Guid, MuchBlog.Domain.Helpers.Parameters.EssayResourceParameters) on controller MuchBlog.Api.Controllers.EssayController (MuchBlog.Api).
+2020-06-26 13:48:56.283 +08:00 [INF] Entity Framework Core 3.1.5 initialized 'BlogDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-06-26 13:48:56.316 +08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2020-06-26 13:48:56.354 +08:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:56.385 +08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Guid), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Content], [t].[CreateDate], [t].[LastModified], [t].[Title], [t].[UserId], [u].[Id], [u].[BirthDate], [u].[BirthPlace], [u].[Email], [u].[Password], [u].[UserName]
+FROM (
+    SELECT [e].[Id], [e].[Content], [e].[CreateDate], [e].[LastModified], [e].[Title], [e].[UserId]
+    FROM [Essays] AS [e]
+    WHERE [e].[UserId] = @__userId_0
+    ORDER BY (SELECT 1)
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[Id]
+2020-06-26 13:48:56.436 +08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Essays] AS [e]
+WHERE [e].[UserId] = @__userId_0
+2020-06-26 13:48:56.445 +08:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[MuchBlog.Api.Dtos.EssayDto, MuchBlog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`3[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MuchBlog.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-06-26 13:48:56.496 +08:00 [INF] Executed action MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api) in 214.7639ms
+2020-06-26 13:48:56.499 +08:00 [INF] Executed endpoint 'MuchBlog.Api.Controllers.EssayController.GetEssaysAsync (MuchBlog.Api)'
+2020-06-26 13:48:56.501 +08:00 [INF] Request finished in 280.7213ms 200 application/json; charset=utf-8
